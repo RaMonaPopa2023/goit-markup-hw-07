@@ -1,0 +1,69 @@
+.activity {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  padding: 94px 215px;
+
+  &__item {
+    padding-inline-start: 0px;
+    display: flex;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+  .activity__description .activity__details {
+    width: 270px;
+  }
+  .activity__description + .activity__description {
+    margin-left: 30px;
+  }
+  &__details {
+    margin-block-start: 10px;
+    margin-block-end: 0;
+  }
+  &__title {
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    margin-top: 94px;
+  }
+  &__description {
+    position: relative;
+  }
+  &__overlay {
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    background: rgba(47, 48, 58, 0.8);
+    color: #ffffff;
+    width: 370px;
+    height: 70px;
+    padding-top: 27px;
+    position: absolute;
+    left: 0px;
+    top: 224px;
+    z-index: 2;
+  }
+
+  &__rectangle {
+    display: table;
+    width: 270px;
+    height: 120px;
+    background: #f5f4fa;
+    border-radius: 4px;
+    margin-bottom: 30px;
+
+    .activity__icons {
+      display: block;
+      margin: 25px 102.34px;
+    }
+  }
+  &__icons {
+    width: 70px;
+    height: 70px;
+  }
+}

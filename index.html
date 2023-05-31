@@ -10,7 +10,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
     />
     <link rel="stylesheet" href="./reset.css" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="./css/main.min.css" />
   </head>
   <body>
     <header class="header">
@@ -527,49 +527,64 @@
         </form>
       </div>
     </footer>
-    <div class="modal" data-modal>
-      <div class="modal-content">
-        <button class="close-btn" data-modal-close>&times;</button>
-        <h2>Leave your information and we'll call you back</h2>
-        <form class="form">
-          <label class="form-group">
+    <!--Modal-->
+    <div class="modal modal--is-hidden" data-modal>
+      <div class="modal__content">
+        <button class="modal__btn" data-modal-close>&times;</button>
+        <h2 class="modal__title">
+          Leave your information and we'll call you back
+        </h2>
+        <form>
+          <label class="form">
             <span>Name</span>
             <input
+              class="form__input"
               id="name"
               name="name"
               type="text"
               style="padding: 12px 40px"
             />
-            <svg class="input-icon">
+            <svg class="form__icon">
               <use
                 href="/images/icons_svg/symbol-defs.svg#icon-person-black"
               ></use>
             </svg>
           </label>
 
-          <label class="form-group">
+          <label class="form">
             <span>Telephone</span>
-            <input id="Telephone" type="tel" style="padding: 12px 40px" />
-            <svg class="input-icon">
+            <input
+              class="form__input"
+              id="Telephone"
+              type="tel"
+              style="padding: 12px 40px"
+            />
+            <svg class="form__icon">
               <use
                 href="/images/icons_svg/symbol-defs.svg#icon-phone-black"
               ></use>
             </svg>
           </label>
 
-          <label class="form-group">
+          <label class="form">
             <span>E-mail</span>
-            <input id="email" type="email" style="padding: 12px 40px" />
-            <svg class="input-icon">
+            <input
+              class="form__input"
+              id="email"
+              type="email"
+              style="padding: 12px 40px"
+            />
+            <svg class="form__icon">
               <use
                 href="/images/icons_svg/symbol-defs.svg#icon-email-black"
               ></use>
             </svg>
           </label>
 
-          <label class="form-group">
+          <label class="form">
             <span>Comments</span>
             <textarea
+              class="form__textarea"
               name="comments"
               class="textarea"
               rows="5"
@@ -577,21 +592,23 @@
             ></textarea>
           </label>
 
-          <label class="form-group form-checkbox">
+          <label class="form form__checkbox">
             <input type="checkbox" name="acceptTerms" />
-            <svg class="input-icon-check">
+            <svg class="form__checkbox--check">
               <use
                 href="/images/icons_svg/symbol-defs.svg#icon-icon-check1"
               ></use>
             </svg>
-            <span>
+            <span class="form__checkbox--text-gray">
               I agree with the letter and accept the
-              <a href="#terms">Terms and Conditions</a>
+              <a class="form__checkbox--text-blue" href="#terms"
+                >Terms and Conditions</a
+              >
             </span>
           </label>
 
-          <div class="form-controls">
-            <button type="submit" class="btn-submit">Send</button>
+          <div class="form__btn">
+            <button type="submit" class="form__btn--submit">Send</button>
           </div>
         </form>
       </div>

@@ -115,17 +115,17 @@ h2 {
 .header .header__nav {
   display: flex;
 }
-.header__nav a:nth-child(n + 2) {
+.header__nav .header__link:nth-child(n + 2) {
   padding-top: 8px;
 }
-.header__nav .nav_contacts div {
+.header__nav .header__contacts {
   padding-top: 8px;
 }
-.header__nav a {
+.header__nav .header__link {
   margin-left: 50px;
   position: relative;
 }
-.header__nav .header__contacts a {
+.header__nav .header__contacts .header__link {
   margin-left: 0;
 }
 .header__nav :first-child {
@@ -326,7 +326,7 @@ h2 {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
-.team__icons .team__icons--circle .team__icons--from-inside {
+.team__icons--circle .team__icons--from-inside {
   width: 20px;
   height: 20px;
   margin: auto;
@@ -353,8 +353,8 @@ h2 {
   transition: color var(--transition);
   transition: background-color var(--transition);
 }
-.team__icons a.team__icons--circle:hover,
-.team__icons a.team__icons--circle:focus {
+.team__icons .team__icons--circle:hover,
+.team__icons .team__icons--circle:focus {
   background-color: var(--social-links-backgroundcolor-activ);
   color: var(--social-links-color);
 }
@@ -477,9 +477,9 @@ a.team__icons--circle:first-child {
 li {
   list-style: none;
 }
-.hero_section_portfolio button:hover,
-.hero_section_portfolio button:focus,
-.hero_section_portfolio button.active {
+.hero_section_portfolio .hero_section_portfolio__btn:hover,
+.hero_section_portfolio .hero_section_portfolio__btn:focus,
+.hero_section_portfolio .hero_section_portfolio__btn.active {
   background: #2196f3;
   color: #ffffff;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
@@ -488,7 +488,7 @@ li {
   transition: background-color var(--transition);
   transition: box-shadow var(--transition);
 }
-.hero_section_portfolio button {
+.hero_section_portfolio .hero_section_portfolio__btn {
   background: #f5f4fa;
   font-weight: 500;
   font-size: 16px;
@@ -503,7 +503,7 @@ li {
   height: 38px;
   padding: 6px 22px;
 }
-.services_list {
+.services {
   font-weight: 700;
   font-size: 18px;
   line-height: 36px;
@@ -511,7 +511,7 @@ li {
   color: #212121;
   display: flex;
 }
-.services_list ul em {
+.services .services__item .services__subtitle {
   font-weight: 400;
   font-size: 16px;
   line-height: 30px;
@@ -519,7 +519,7 @@ li {
   color: #757575;
   font-style: normal;
 }
-.hero_section_portfolio ul {
+.hero_section_portfolio .hero_section_portfolio__item {
   display: flex;
   justify-content: center;
   padding-inline-start: 0;
@@ -527,10 +527,13 @@ li {
   margin-block-start: 0;
   margin-block-end: 0;
 }
-.hero_section_portfolio ul li + li {
+.hero_section_portfolio
+  .services__item
+  .services__content
+  + .services__content {
   margin-left: 8px;
 }
-.services_list ul {
+.services .services__item {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
@@ -539,13 +542,13 @@ li {
   padding-inline-start: 0;
   margin-bottom: 94px;
 }
-.item_overlay {
+.services__overlay {
   position: relative;
   width: 370px;
   height: 294px;
   overflow: hidden;
 }
-.overlay_portfolio {
+.services__overlay--with-img {
   position: absolute;
   background: rgba(33, 150, 243, 0.9);
   color: #ffffff;
@@ -562,7 +565,7 @@ li {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   top: 100%;
 }
-.overlay_text {
+.services__overlay--with-text {
   font-family: "Roboto";
   font-weight: 400;
   font-size: 18px;
@@ -571,32 +574,32 @@ li {
   color: #ffffff;
   margin: 0;
 }
-.services_list .item_overlay {
+.services .services__overlay {
   position: relative;
   overflow: hidden;
   top: 0;
 }
-.services_list .item_overlay:hover .overlay_portfolio {
+.services_list .services__overlay:hover .services__overlay--with-img {
   cursor: pointer;
   top: 0;
 }
-.services_list ul li {
+.services .services__item .services__content {
   background: #ffffff;
   height: 404px;
   border: 1px solid #eeeeee;
   border-image-width: 0;
   position: relative;
 }
-.services_list ul li:hover {
+.services .services__item .services__content:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-.services_list span {
+.services .services__title {
   margin-left: 24px;
   margin-top: 20px;
   position: absolute;
 }
-.services_list em {
+.services .services__subtitle {
   position: absolute;
   margin-left: 24px;
   margin-top: 20px;
@@ -621,7 +624,7 @@ li {
   opacity: 1;
   transition: transform var(--transition);
 }
-.modal-content {
+.modal__content {
   background: #ffffff;
   border-radius: 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -631,7 +634,7 @@ li {
   position: relative;
   padding: 40px 39px 40px 41px;
 }
-.modal-content h2 {
+.modal__content .modal__title {
   font-weight: 700;
   font-size: 20px;
   line-height: 23px;
@@ -640,7 +643,7 @@ li {
   margin-block-start: 0;
   margin-block-end: 12px;
 }
-.close-btn {
+.modal .modal__btn--close {
   position: absolute;
   right: 8px;
   top: 8px;
@@ -648,14 +651,14 @@ li {
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
-.close-btn:hover,
-.close-btn:focus {
+.modal__btn--close:hover,
+.modal__btn--close:focus {
   color: #2196f3;
   transition: transform var(--transition);
 }
-.is-hidden {
+.modal--is-hidden {
   transform: scale(1.1);
-  visibility: hidden;
+  visibility: visible;
   pointer-events: auto;
 }
 /*Formular footer*/
@@ -716,19 +719,19 @@ li {
 }
 
 /*Formular Modal*/
-.form-group {
+.form__group {
   position: relative;
   display: flex;
   gap: 4px;
   flex-direction: column;
 }
 
-.form-group + .form-group {
+.form__group + .form__group {
   margin-top: 10px;
 }
 
 /* Label Text */
-.form-group > *:nth-child(1) {
+.form__group > *:nth-child(1) {
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
@@ -737,49 +740,49 @@ li {
 }
 
 /* Input */
-.form-group input {
+.form__group .form__input {
   height: 40px;
 }
-.form-group .input-icon {
+.form__group .form__icon {
   left: 12px;
   top: 50%;
   position: absolute;
 }
 
-.form-group > *:nth-child(2) {
+.form__group > *:nth-child(2) {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   padding: 12px 16px;
 }
-.form-group input:focus-visible,
-.form-group textarea:focus-visible {
+.form__group .form__input:focus-visible,
+.form__group .form__textarea:focus-visible {
   outline: 1px solid #2196f3;
   transition: transform var(--transition);
 }
-.form-group + .form-checkbox {
+.form__group + .form__checkbox {
   flex-direction: row;
   gap: 8px;
   margin-top: 20px;
   align-items: center;
 }
-.form-checkbox > *:nth-child(2) {
+.form__checkbox > *:nth-child(2) {
   padding: 0;
   border: none;
 }
-.textarea {
+.form__textarea {
   resize: none;
 }
-.form-checkbox a {
+.form__checkbox--text-blue {
   text-decoration: underline;
   color: #2196f3;
 }
 
-.form-controls {
+.form__btn {
   display: flex;
   justify-content: center;
   margin-top: 30px;
 }
-.input-icon {
+.form__icon {
   left: 12px;
   top: 50%;
   position: absolute;
@@ -792,7 +795,7 @@ input:focus + svg {
   transition: transform var(--transition);
 }
 
-.form-checkbox .input-icon-check {
+.form__checkbox .form__checkbox--check {
   width: 16px;
   height: 15px;
   margin-right: -1px;
@@ -802,19 +805,19 @@ input:focus + svg {
   color: #ffffff;
 }
 
-.form-checkbox span {
+.form__checkbox .form__checkbox--text-gray {
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
 }
-.form-checkbox input[type="checkbox"] {
+.form__checkbox input[type="checkbox"] {
   display: none;
 }
-.form-checkbox input[type="checkbox"]:checked + .input-icon-check {
+.form__checkbox input[type="checkbox"]:checked + .form__checkbox--check {
   background-color: #2196f3;
   border: #2196f3;
 }
-.btn-submit {
+.form__btn--submit {
   background: #2196f3;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -833,8 +836,8 @@ input:focus + svg {
   max-width: 200px;
 }
 
-.btn-submit:hover,
-.btn-submit:focus {
+.form__btn--submit:hover,
+.form__btn--submit:focus {
   background: #1a78c5;
   transition: transform var(--transition);
 }
