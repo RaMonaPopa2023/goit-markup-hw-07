@@ -46,9 +46,9 @@
   & div {
     display: flex;
   }
-  &__icons .social-media-icon--background:first-child {
-    margin-left: 0;
-  }
+}
+.social-media-icon .social-media-icon--background:first-child {
+  margin-left: 0;
 }
 
 .footer__address .footer__link {
